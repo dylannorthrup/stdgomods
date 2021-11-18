@@ -24,7 +24,7 @@ var (
 	customColors    map[string]aec.ANSI // Map for holding our colors
 )
 
-func init() {
+func InitOutputTools() {
 	// Instantiating a map for my custom colors
 	customColors = make(map[string]aec.ANSI)
 
@@ -34,7 +34,7 @@ func init() {
 	log.SetPrefix("=============================================\nES_DEBUG: ")
 }
 
-// Print debug info. Uses logger with one-time config options set in init()
+// Print debug info. Uses logger with one-time config options set in InitOutputTools()
 // It will only print if the global DEBUG variable is 'true'
 func PDebug(msg ...string) {
 	if !DEBUG {
