@@ -1,4 +1,4 @@
-module stdgomods
+module github.com/dylannorthrup/stdgomods
 
 go 1.16
 
