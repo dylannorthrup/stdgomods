@@ -140,6 +140,17 @@ func SPRed(frmt string, vars ...interface{}) string {
 	msg := fmt.Sprintf(frmt, vars...)
 	return fmt.Sprintf("%s", Red(msg))
 }
+func Green(msg string) string {
+	return Colorize("%s", aec.Bold, Colorize("%s", aec.GreenF, msg))
+}
+func PGreen(frmt string, vars ...interface{}) {
+	msg := fmt.Sprintf(frmt, vars...)
+	fmt.Printf("%s", Green(msg))
+}
+func SPGreen(frmt string, vars ...interface{}) string {
+	msg := fmt.Sprintf(frmt, vars...)
+	return fmt.Sprintf("%s", Green(msg))
+}
 func Yellow(msg string) string {
 	return Colorize("%s", aec.Bold, Colorize("%s", aec.YellowF, msg))
 }
@@ -150,6 +161,23 @@ func PYellow(frmt string, vars ...interface{}) {
 func SPYellow(frmt string, vars ...interface{}) string {
 	msg := fmt.Sprintf(frmt, vars...)
 	return fmt.Sprintf("%s", Yellow(msg))
+}
+
+// This is a lighter shade of green than the normal green. It's defined
+// because my normal screen colors are green on black.
+func Grean(msg string) string {
+	if customColors["GreanF"] == nil {
+		customColors["GreanF"] = aec.Color8BitF(aec.NewRGB8Bit(0xac, 0x81, 0x00))
+	}
+	return Colorize("%s", aec.Bold, Colorize("%s", customColors["GreanF"], msg))
+}
+func PGrean(frmt string, vars ...interface{}) {
+	msg := fmt.Sprintf(frmt, vars...)
+	fmt.Printf("%s", Grean(msg))
+}
+func SPGrean(frmt string, vars ...interface{}) string {
+	msg := fmt.Sprintf(frmt, vars...)
+	return fmt.Sprintf("%s", Grean(msg))
 }
 func Blue(msg string) string {
 	return Colorize("%s", aec.Bold, Colorize("%s", aec.BlueF, msg))
