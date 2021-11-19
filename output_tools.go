@@ -167,7 +167,7 @@ func SPYellow(frmt string, vars ...interface{}) string {
 // because my normal screen colors are green on black.
 func Grean(msg string) string {
 	if customColors["GreanF"] == nil {
-		customColors["GreanF"] = aec.Color8BitF(aec.NewRGB8Bit(0xac, 0x81, 0x00))
+		customColors["GreanF"] = aec.Color8BitF(aec.NewRGB8Bit(0x4c, 0xfc, 0x4c))
 	}
 	return Colorize("%s", aec.Bold, Colorize("%s", customColors["GreanF"], msg))
 }
